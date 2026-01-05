@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-	int Ehp[3] = { 9000 , 41, 67 }; //this array has five slots its not dynamic
+	int Ehp[3] = { 9000 , 41, 67 }; //this array has three slots its not dynamic
 
 	for (int i = 0; i < 3; i++)
 	{
@@ -18,4 +18,5 @@ int main()
 	return 0;
 
 }
+
 
