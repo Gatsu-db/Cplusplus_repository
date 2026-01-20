@@ -114,12 +114,12 @@ int main()
 
 			if (newstate!=enemies[i].state)
 			{
-				onExitstate(enemies[i], i);
+				onExitstate(enemies[i], i);// this only runs on transition
 				enemies[i].previoustate = enemies[i].state;
 				enemies[i].state = newstate;
-				onEnterstate(enemies[i], i);
+				onEnterstate(enemies[i], i);// this runs once 
 			}
-			printenemy(enemies[i], i);
+			printenemy(enemies[i], i); //this runs every turn
 			onUpdatestate(enemies[i], i);
 			if (enemies[i].state !=DEAD)
 				alldead=false;
@@ -132,4 +132,5 @@ int main()
 		turn++;
 	}
 	return 0;
+
 }
