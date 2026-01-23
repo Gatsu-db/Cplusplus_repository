@@ -12,7 +12,7 @@ struct Enemy
 	Enemystate previoustate;
 };
 
-Enemystate determinenextstate(const Enemy& enemy)
+Enemystate determinenextstate(const Enemy& enemy) // only allowed to look at enemy.health
 {
 	if (enemy.health <= 0)
 		return DEAD;
@@ -46,7 +46,7 @@ void onExitstate(const Enemy&enemy,int index)
 void onEnterstate(const Enemy& enemy, int index)
 {
 	cout << "Enemy " << index << " Entered ";
-		switch (enemy.state)
+		switch (enemy.state) // should oly occur once
 		{
 		case HEALTHY:cout << "Healthy\n";
 			break;
@@ -63,7 +63,7 @@ void onUpdatestate(const Enemy& enemy, int index)
 {
 	cout << "Enemy " << index << " decides to ";
 
-	switch (enemy.state)
+	switch (enemy.state) // acoording tho the state this should happen every turn
 	{
 	case HEALTHY:cout << "Act aggressively\n";
 		break;
@@ -134,3 +134,4 @@ int main()
 	return 0;
 
 }
+
